@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="my portfolio website to showcase the work I have done so far, the services I provide and all my professionals life.">
+    <title>Chinmai Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+  @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;600;700&family=Poppins:wght@500;600;700;800&family=Rufina:wght@400;700&family=Work+Sans:wght@400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --heading: rgb(0 10 45);
+  --para: #777777;
+  --para-tint: #e4e4e4;
+  --third: #fff;
+  --helper: #8490ff;
+  --helper-tint: #f3f4ff;
+  --bg: rgb(249 249 255);
+  --gradient: linear-gradient(0deg, rgb(132 144 255) 0%, rgb(98 189 252) 100%);
+  --shadpw: 0px 0px 20px 0px rgb(132 144 255 / 20%);
+}
+
+/* spacing 
+desktop = 4.8rem */
+
+html {
+  font-size: 62.5%;
+  font-family: "Work Sans", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Rufina", serif;
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  color: var(--heading);
+  font-size: 6rem;
+  font-weight: 600;
+}
+
+p {
+  color: var(--para);
+  line-height: 1.6;
+  font-size: 1.8rem;
+
+  /* word-spacing: 0.1rem; */
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.btn {
+  background: -webkit-linear-gradient(
+    0deg,
+    rgb(132 144 255) 0%,
+    rgb(98 189 252) 100%
+  );
+
+  padding: 1.6rem 3.2rem;
+  border: none;
+  color: rgb(255 255 255);
+  display: inline-block;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  position: relative;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  position: relative;
+}
+
+.btn:hover {
+  box-shadow: 0px 20px 20px 0px rgb(132 144 255 / 30%);
+  color: rgb(255 255 255);
+}
+
+.section {
+  padding: 9rem 0;
+}
+
+.container {
+  max-width: 140rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: 9rem;
+}
+
+.grid-two-col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-three-col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-four-col {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ===========================================
+Header Section Start
+======================================= */
+
+.header {
+  padding: 0 4.8rem;
+  height: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg);
+  /* background-color: #e7f5ff; */
+}
+
+.header .logo {
+  /* width: 15%; */
+  height: 3rem;
+}
+
+.navbar-lists {
+  display: flex;
+  gap: 4.8rem;
+  list-style: none;
+}
+
+.navbar-link:link,
+.navbar-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #212529;
+  transition: all 0.3s;
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar-link:hover,
+.navbar-link:active {
+  color: var(--helper);
+}
+
+.mobile-navbar-btn {
+  /* by default for normal screen we want to hide  */
+  display: none;
+  background: transparent;
+  cursor: pointer;
+  border: none;
+}
+
+.mobile-nav-icon {
+  width: 5rem;
+  height: 5rem;
+  color: #212529;
+}
+
+/* for desktop or mobile menu-outline one must be visible  
+and we need to hide the close menu icon
+*/
+.mobile-nav-icon[name="close-outline"] {
+  display: none;
+}
+
+/* sticky Navbar */
+.sticky .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 8rem;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* ===========================================
+Hero  Section Start
+======================================= */
+
+.section-hero {
+  background: var(--bg);
+}
+
+.section-hero-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.hero-top-data {
+  text-transform: uppercase;
+  color: var(--heading);
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--helper);
+}
+
+.hero-heading {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 6.4rem;
+}
+
+.hero-para {
+  margin-top: 1.5rem;
+  margin-bottom: 5rem;
+  max-width: 60rem;
+}
+
+.section-hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-img {
+  max-width: 80%;
+  z-index: 1;
+}
+
+/* ===========================================
+ Bio Data Section Start
+======================================= */
+
+.bio-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bio-image img {
+  display: inline-block;
+  width: 80%;
+  box-shadow: -2rem -2rem 0rem 0rem var(--helper);
+}
+
+.common-heading {
+  font-size: 4.8rem;
+  font-weight: 700;
+  margin-bottom: 6rem;
+  text-transform: capitalize;
+  position: relative;
+}
+
+.common-heading::before {
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: var(--helper);
+}
+
+.common-heading::after {
+  content: "";
+  position: absolute;
+  top: 128%;
+  left: 1.5rem;
+  width: 30%;
+  height: 0.3rem;
+  background: var(--helper);
+}
+
+.bio-data-stats {
+  padding: 6.4rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.bio-progress-bar {
+  width: 90%;
+  height: 0.8rem;
+  /* background: var(--para); */
+  background-color: rgb(233 236 239);
+  border-radius: 10rem;
+  position: relative;
+  box-shadow: var(--shadpw);
+  /* overflow: hidden; */
+}
+
+.bio-progress-bar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: inherit;
+  background: -webkit-linear-gradient(
+    0deg,
+    rgb(132 144 255) 0%,
+    rgb(98 189 252) 100%
+  );
+  border-radius: 10rem;
+}
+
+/* to create the rectangle box  */
+.bio-progress-bar span {
+  position: absolute;
+  top: 1.8rem;
+  left: 76%;
+  width: 4rem;
+  height: 2rem;
+  background: var(--helper);
+  color: var(--third);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+}
+
+/* to create the traingle or caret symbol  */
+.bio-progress-bar span::after {
+  content: "";
+  position: absolute;
+  top: -1.6rem;
+  width: 0rem;
+  height: 0rem;
+  border: 0.8rem solid var(--helper);
+  border-color: transparent;
+  border-bottom-color: var(--helper);
+}
+
+/* ===========================================
+ Section portfolio
+======================================= */
+
+.section-portfolio {
+  background-color: var(--bg);
+}
+
+.section-portfolio p,
+.section-services p {
+  max-width: 60rem;
+}
+
+.portfolio-images {
+  gap: 3.2rem;
+  margin-top: 6.4rem;
+}
+
+.img-ovelay {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-images img {
+  width: 100%;
+  border-radius: 7px;
+  position: relative;
+  overflow: hidden;
+}
+
+.img-ovelay .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-linear-gradient(
+    0deg,
+    rgb(132 144 255) 0%,
+    rgb(98 189 252) 100%
+  );
+  opacity: 0;
+  color: var(--third);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(100%);
+  transition: all 0.3s linear;
+  border-radius: 7px;
+  /* box-shadow: inset 0 0 0 0.5rem var(--helper-tint); */
+}
+
+.img-ovelay:hover > .overlay {
+  opacity: 0.8;
+  transform: translateY(0);
+  cursor: pointer;
+}
+
+.img-ovelay .overlay .common-heading {
+  margin: 0;
+  color: var(--third);
+  text-decoration: none;
+}
+
+/* ===========================================
+work data Section
+======================================= */
+.section-work-data {
+  background: -webkit-linear-gradient(
+    0deg,
+    rgb(132 144 255) 0%,
+    rgb(98 189 252) 100%
+  );
+  color: var(--third);
+  text-align: center;
+}
+
+.common-numbers {
+  font-size: 4.8rem;
+}
+
+.section-work-data p {
+  color: var(--third);
+}
+
+/* ===========================================
+Services Section
+======================================= */
+
+.section-services p {
+  max-width: 60rem;
+}
+
+.section-services .grid {
+  margin-top: 10rem;
+  row-gap: 10rem;
+}
+
+.service-box {
+  text-align: center;
+  box-shadow: var(--shadpw);
+  border-radius: 5px;
+  padding: 6.4rem 3.4rem;
+  transition: all 0.2s linear;
+}
+
+.service-box:hover {
+  transform: translateY(-3rem);
+}
+
+.serive-icon {
+  width: 8rem;
+  height: 8rem;
+  background-color: rgb(144 172 209 / 20%);
+  display: inline-block;
+  border-radius: 56% 44% 70% 30% / 30% 54% 46% 70%;
+  padding: 1.4rem 1.8rem;
+  position: relative;
+  color: var(--heading);
+  animation: water-wave 3s linear infinite;
+}
+
+.serive-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(11, 15, 20, 0.9);
+  width: 90%;
+  height: 90%;
+  border-radius: 56% 44% 70% 30% / 30% 54% 46% 70%;
+  background-color: transparent;
+  animation: water-wave 5s linear infinite alternate;
+}
+
+@keyframes water-wave {
+  0% {
+    border-radius: 56% 44% 70% 30% / 30% 54% 46% 70%;
+  }
+  50% {
+    border-radius: 3% 97% 15% 85% / 72% 0% 100% 28%;
+  }
+  100% {
+    border-radius: 56% 44% 70% 30% / 30% 54% 46% 70%;
+  }
+}
+
+.service-box h3 {
+  text-transform: capitalize;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* ===========================================
+Resume Section
+======================================= */
+
+.section-resume {
+  background: var(--bg);
+}
+
+.resume-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.resume-img img {
+  width: 80%;
+  box-shadow: -2rem 2rem 0 0 var(--helper);
+  /* box-shadow: var(--shadpw) */
+}
+
+.resume-para {
+  font-size: 2.4rem;
+  letter-spacing: 0;
+  text-transform: capitalize;
+  color: var(--heading);
+}
+
+.resume-data-subsection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4.8rem;
+  margin-top: 4.4rem;
+  padding-bottom: 2.4rem;
+  border-bottom: 1px solid var(--para-tint);
+}
+
+.resume-data-left .grid {
+  gap: 1.5rem;
+}
+
+.resume-data-left .grid p,
+.resume-data-right p {
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.resume-data-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.resume-data-right .resume-data-button {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: var(--helper);
+  padding: 0.3rem 0;
+  min-width: 50%;
+  background: #f3f4ff;
+  border-radius: 10rem;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.resume-data-bottom-subsection {
+  margin-top: 4.8rem;
+}
+
+.resume-data-bottom-subsection .margin-small {
+  margin-top: 1.8rem;
+}
+
+.resume-data-bottom-subsection .resume-data-button {
+  width: 80%;
+}
+
+/* ===========================================
+Testimonial Swiper Queries Section
+======================================= */
+/* 
+.section-testimonial {
+  background-color: var(--bg);
+} */
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  margin-top: 9rem;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* background: #fff; */
+
+  /* Center slide text vertically */
+  flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.swiper-client-msg {
+  padding: 5rem 8rem;
+  background-color: var(--third);
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: var(--shadpw);
+  position: relative;
+}
+
+.swiper-client-msg::before {
+  content: "";
+  position: absolute;
+  bottom: -10rem;
+  left: 50%;
+  transform: translateX(-50%);
+  /* width: 5rem;
+  height: 5rem; */
+  border: 5rem solid var(--third);
+  border-color: transparent;
+  border-top-color: var(--third);
+}
+
+.swiper-client-msg p::before {
+  content: "\f10d";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 2rem;
+  font-size: 5rem;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: #ced3ff;
+}
+
+.swiper-client-msg p::after {
+  /* display: inline-block */
+  content: "\f10e";
+  position: absolute;
+  bottom: 0%;
+  right: 5%;
+
+  font-size: 5rem;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: #ced3ff;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-client-data {
+  align-items: center;
+  justify-items: start;
+  justify-content: start;
+  gap: 1.4rem;
+  margin-top: 3.2rem;
+}
+
+.swiper-client-data img {
+  max-width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  border: 0.5rem solid #ced3ff;
+}
+
+.swiper-client-data p:first-child {
+  font-weight: bold;
+  color: var(--heading);
+}
+
+/* ===========================================
+freelancer  Section
+======================================= */
+
+.section-freelancer {
+  background-image: url("../images/folio/3.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  text-align: center;
+  position: relative;
+  background-attachment: fixed;
+}
+
+.section-freelancer .overlay {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #3e64ff;
+  opacity: 0.7;
+}
+
+.section-freelancer .container {
+  position: relative;
+}
+
+.section-freelancer h2 {
+  font-size: 5.4rem;
+}
+
+.section-freelancer h2 span {
+  color: #a0f669;
+}
+
+.section-freelancer h2,
+.section-freelancer p {
+  color: var(--third);
+  margin-bottom: 1.8rem;
+}
+
+/* ===========================================
+contact Section
+======================================= */
+
+.section-contact-main {
+  max-width: 70rem;
+  margin: 0 auto;
+  margin-top: 10rem;
+}
+
+.section-contact-main form {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.section-contact-main .grid {
+  gap: 2.4rem;
+}
+
+.section-contact-main input,
+textarea {
+  padding: 1.5rem 2rem;
+  border: 0.1rem solid #c9c9c9;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 1.6rem;
+  font-family: "work sans";
+}
+
+.section-contact-main textarea {
+  height: 15rem;
+}
+
+/* ::placeholder {
+  font-size: 1.6rem;
+  font-family: "work sans";
+} */
+
+.section-contact-main input[type="submit"] {
+  max-width: 30%;
+  border: none;
+}
+
+/* ===========================================
+Footer Section
+======================================= */
+
+.section-footer {
+  background: var(--heading);
+}
+
+.section-footer h3 {
+  color: var(--third);
+  margin-bottom: 4rem;
+}
+
+.f-about p {
+  color: #adadad;
+}
+
+.f-links ul,
+.f-services ul,
+.f-address address {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  justify-content: center;
+  list-style: none;
+}
+
+.f-links li,
+.f-links a,
+.f-services li,
+.f-services a {
+  font-size: 1.8rem;
+  color: #adadad;
+  text-transform: capitalize;
+}
+
+.f-links span,
+.f-services span,
+.f-address span {
+  margin-right: 1rem;
+}
+
+.f-address p {
+  font-style: normal;
+  color: #adadad;
+}
+
+.f-social-icons {
+  margin: 5rem 0;
+  text-align: center;
+  color: #adadad;
+}
+
+.f-social-icons .icons {
+  width: 4rem;
+  height: 4rem;
+  background-color: rgb(144 172 209 / 20%);
+  display: inline-block;
+  padding: 1.4rem 1.8rem;
+  position: relative;
+  color: var(--heading);
+  animation: water-wave 3s linear infinite;
+  color: var(--third);
+}
+
+.f-credits p {
+  text-align: center;
+  color: #adadad;
+}
+
+footer a:hover {
+  color: var(--third);
+}
+/* ===========================================
+Media Queries Section
+======================================= */
+
+@media (max-width: 94em) {
+  .container {
+    max-width: 130rem;
+  }
+  .navbar-lists {
+    gap: 3.4rem;
+  }
+}
+
+/* for widht below 1200px  */
+@media (max-width: 75em) {
+  .container {
+    max-width: 110rem;
+  }
+  .navbar-lists {
+    gap: 3.4rem;
+  }
+}
+
+/* media queries less then 980px */
+@media (max-width: 980px) {
+  /* to make all the container with same padding  */
+  .container {
+    padding: 0 3.2rem;
+  }
+
+  html {
+    font-size: 56.25%;
+  }
+
+  /* when we are in 980px we need to show the menu open icon */
+  .mobile-navbar-btn {
+    display: block;
+    /* background-color: #212529; */
+    z-index: 99999;
+    border: 3px solid #212529;
+    color: #212529;
+  }
+
+  .header {
+    position: relative;
+  }
+
+  .header .logo {
+    width: 40%;
+    /* height: 3.4rem; */
+  }
+
+  .navbar {
+    width: 100%;
+    height: 100vh;
+    background: #e7f5ff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: all 0.5s linear;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .navbar-lists {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar .navbar-lists .navbar-link:link,
+  .navbar .navbar-lists .navbar-link:visited {
+    color: #212529;
+    font-size: 3.2rem;
+  }
+
+  .active .navbar {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(0);
+    z-index: 9999;
+  }
+
+  .active .mobile-navbar-btn .mobile-nav-icon[name="close-outline"] {
+    display: block;
+  }
+
+  .active .mobile-navbar-btn .mobile-nav-icon[name="menu-outline"] {
+    display: none;
+  }
+
+  /* hero section  */
+
+  .section-hero h1 {
+    line-height: 1.05;
+  }
+
+  /* section bidoata  */
+  .section-biodata .grid {
+    gap: 3rem;
+  }
+
+  /* section work  */
+  .section-work-data .common-numbers {
+    font-size: 3.2rem;
+  }
+
+  /* services section  */
+
+  .section-services .grid {
+    gap: 6rem;
+  }
+
+  .section-services .grid-three-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* resume section  */
+  .section-resume .grid-two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .section-resume .grid-two-col img {
+    width: 50%;
+  }
+  .resume-img {
+    grid-row: 2;
+    transform: translateY(-2rem);
+  }
+
+  /* testimonial section  */
+  .section-testimonial .grid-three-col {
+    grid-template-columns: 2fr;
+  }
+
+  .section-footer .grid-four-col {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Below 780px  */
+@media (max-width: 780px) {
+  .container {
+    max-width: 720px;
+  }
+  /* hero section  */
+  .section-hero .grid-two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .section-hero-data {
+    align-items: center;
+  }
+
+  .section-hero-data .hero-top-data {
+    /* align-self: flex-start; */
+  }
+
+  .hero-heading {
+    text-align: center;
+  }
+  .hero-para {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .section-hero img {
+    width: 70%;
+  }
+
+  /* work section  */
+  .section-portfolio .grid-three-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Below 560px  */
+@media (max-width: 35em) {
+  .header {
+    padding: 0 3.2rem;
+  }
+
+  .header .logo {
+    width: 60%;
+  }
+
+  /* secion .bio-data */
+
+  .section-biodata .grid-two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .section-biodata .bio-image {
+    grid-row: 2;
+    margin-top: 3.2rem;
+  }
+
+  /* work section  */
+  .section-work-data .grid-four-col {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* services section  */
+  .section-services .grid-three-col {
+    grid-template-columns: 1fr;
+  }
+}
+  
+  </style>
+  </head>
+
+  <body>
+    <header class="header">
+      <img
+        src="https://1.bp.blogspot.com/-4QIBI-XmW4I/WdtCeBUDv1I/AAAAAAAAA3Y/sFI5RQUjNxQ5QD0XR1fwkpyq5BIPD6QZACLcBGAs/s1600/Free%2BLetter%2BC%2BLogo%2BDesign.png"
+        alt="chini technical logo"
+        class="logo"
+      />
+      <nav class="navbar">
+        <ul class="navbar-lists">
+          <li><a class="navbar-link home-link" href="#" >Home</a></li>
+          <li><a class="navbar-link about-link" href="about.html">About</a></li>
+          <li><a class="navbar-link service-link" href="/service.html">Services</a></li>
+          <li><a class="navbar-link portfolio-link" href="#portfolio-section">Portfolio</a></li>
+          <li>
+            <a
+              class="navbar-link"
+              href="/contact.html"
+              target="_blank"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <div class="mobile-navbar-btn">
+        <ion-icon
+          class="mobile-nav-icon"
+          name="menu-outline"
+          class="mobile-nav-icon"
+        ></ion-icon>
+
+        <ion-icon
+          class="mobile-nav-icon"
+          name="close-outline"
+          class="mobile-nav-icon"
+        ></ion-icon>
+      </div>
+    </header>
+
+    <!-- ======================================== 
+          Our Main Hero Section Start  
+    ========================================  -->
+    <main>
+      <section class="section-hero section">
+        <div class="container grid grid-two-col">
+          <div class="section-hero-data">
+            <p class="hero-top-data">this is me</p>
+            <h1 class="hero-heading">Chinmai G</h1>
+            <p class="hero-para">
+              I'm Chinmai Gaikar. A  Frontend Developer. <br>
+			  A UI&UX Designer , Digital Marketer.
+            </p>
+            <div>
+              <a href="#" target="_blank" class="btn hireme-btn">Hire Me</a>
+            </div>
+          </div>
+
+          <div class="section-hero-image">
+            <img src="https://media.licdn.com/dms/image/C4D03AQHleXW_YOgv1A/profile-displayphoto-shrink_400_400/0/1655230593185?e=1681344000&v=beta&t=QCkjPbLK-lvEdRruj8hrmAZzIvj3JaiahYbVDcz0DC8" alt="hero image" class="hero-img" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ======================================== 
+           Bio Data Section Start  
+    ========================================  -->
+    <section class="section-biodata section">
+      <div class="container grid grid-two-col">
+        <div class="bio-image">
+          <img src="https://tse2.mm.bing.net/th?id=OIP.B5nfs-klP6ow9rEkrHTnLQHaGW&pid=Api&P=0" alt="bio data image" />
+        </div>
+        <div class="bio-data">
+          <h2 class="common-heading">my bio-data</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+            natus eum quibusdam, blanditiis nobis dolor distinctio asperiores
+            itaque voluptas nesciunt cum dolorum. Quidem sed id repellat facere
+          </p>
+          <br />
+          <p>
+            itaque voluptas nesciunt cum dolorum. Quidem sed id repellat facere
+            quod placeat praesentium.
+          </p>
+
+          <div class="bio-data-stats">
+            <div class="bio-stats">
+              <h3>Design</h3>
+              <div class="bio-progress-bar">
+                <span>80%</span>
+              </div>
+            </div>
+            <div class="bio-stats">
+              <h3>HTML</h3>
+              <div class="bio-progress-bar bio-progress-2">
+                 <span>99%</span>
+              </div>
+            </div>
+            <div class="bio-stats">
+              <h3>CSS</h3>
+              <div class="bio-progress-bar bio-progress-3">
+                 <span>90%</span>
+              </div>
+            </div>
+            <div class="bio-stats">
+              <h3>JavaScript</h3>
+              <div class="bio-progress-bar bio-progress-4">
+                 <span>85%</span>
+              </div>
+            </div>
+            <div class="bio-stats">
+              <h3>MERN</h3>
+              <div class="bio-progress-bar bio-progress-5">
+                 <span>70%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bio-data-btn">
+            <a href="https://drive.google.com/file/d/1vD_pIM24_j_fZXkYzEMShztar_EDWaSE/view?usp=sharing" class="btn" download> Downlaod CV </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================== 
+        Portfolio works Section Start  
+    ========================================  -->
+    <section class="section-portfolio section " id="portfolio-section">
+      <div class="container">
+        <h2 class="common-heading">Latest works</h2>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem ex
+          eos commodi provident tempore possimus, mollitia vero quas.
+        </p>
+      </div>
+	  <br>
+
+      <center><div class="p-btns">
+        <button class="btn p-btn " data-btn-num="1" >Websites</button>
+        <button class="btn p-btn " data-btn-num="2" >Youtube </button>
+        <button class="btn p-btn " data-btn-num="3" >Design</button>
+      </div>
+      </center>
+      <div class="container grid grid-three-col portfolio-images">
+        <div class="img-ovelay p-btn--1" >
+          <img src="C:\Users\Chinmai\Downloads\WhatsApp Image 2023-02-07 at 6.53.27 PM.jpeg" loading="lazy" alt="portfolio images "  />
+          <div class="overlay">
+            <a href="https://www.figma.com/file/UblHjEAp1mP2MF0EvjfDgk/Furni?node-id=0%3A1&t=AXAyuhaP5YwMqb0h-1" target="_blank"  class="common-heading">Design 1</a>
+          </div>
+        </div>
+
+        <div class="img-ovelay p-btn--3">
+          <img src= "C:\Users\Chinmai\Downloads\WhatsApp Image 2023-02-07 at 6.53.28 PM.jpeg" loading="lazy" alt="portfolio images "  height="360px"/>
+          <div class="overlay">
+             <a href=" " target="_blank"  class="common-heading">Design 2</a>
+          </div>
+        </div>
+
+        <div class="img-ovelay p-btn--1">
+          <img src="C:\Users\Chinmai\OneDrive\Desktop\DSA\Screenshot 2023-02-07 190809.jpg" loading="lazy" alt="portfolio images "   height="360px" />
+          <div class="overlay">
+             <a href="https://www.figma.com/file/2i1kRHAduttZ8kITJhSfMF/IWD?node-id=0%3A1&t=6Z0L7P1gRfKBOyYZ-1" target="_blank"  class="common-heading">Design 3</a>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- ======================================== 
+          work completed counter section Start  
+    ========================================  -->
+
+    <section class="section-work-data section ">
+      <div class="container grid grid-four-col">
+        <div>
+          <h2 data-number="2000" class="counter-numbers">0</h2>
+          <p>project completed</p>
+        </div>
+        <div>
+          <h2 data-number="6000" class="counter-numbers">0+</h2>
+          <p>Happy clients</p>
+        </div>
+        <div>
+          <h2 data-number="5000" class="counter-numbers">0+</h2>
+          <p>cups of coffee</p>
+        </div>
+        <div>
+          <h2 data-number="3000" class="counter-numbers">0+</h2>
+          <p>real professionals</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================== 
+          Our Service Section Start  
+    ========================================  -->
+    <section class="section-services section ">
+      <div class="container">
+        <h2 class="common-heading">Service Offers</h2>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem ex
+          dolores tempore possimus, mollitia vero quas
+        </p>
+      </div>
+
+      <div class="container grid grid-three-col">
+        <div class="service-box">
+          <ion-icon class="service-icon" name="desktop-outline"></ion-icon>
+          <h3>web Design</h3>
+          <p>
+            “It is not because things are difficult that we do not dare; it is
+            because we do not dare that they are difficult.”
+          </p>
+        </div>
+
+        <div class="service-box">
+          <ion-icon name="logo-react" class="service-icon"></ion-icon>
+          <h3>web development</h3>
+          <p>
+            “It is not because things are difficult that we do not dare; it is
+            because we do not dare that they are difficult.”
+          </p>
+        </div>
+
+        <div class="service-box">
+          <ion-icon class="service-icon" name="desktop-outline"></ion-icon>
+          <h3>photography</h3>
+          <p>
+            “It is not because things are difficult that we do not dare; it is
+            because we do not dare that they are difficult.”
+          </p>
+        </div>
+
+        <div class="service-box">
+          <ion-icon class="service-icon" name="desktop-outline"></ion-icon>
+          <h3>clipping path</h3>
+          <p>
+            “It is not because things are difficult that we do not dare; it is
+            because we do not dare that they are difficult.”
+          </p>
+        </div>
+        <div class="service-box">
+          <ion-icon class="service-icon" name="desktop-outline"></ion-icon>
+          <h3>apps interface</h3>
+          <p>
+            “It is not because things are difficult that we do not dare; it is
+            because we do not dare that they are difficult.”
+          </p>
+        </div>
+        <div class="service-box">
+          <ion-icon class="service-icon" name="desktop-outline"></ion-icon>
+          <h3>graphic design</h3>
+          <p>
+            “It is not because things are difficult that we do not dare; it is
+            because we do not dare that they are difficult.”
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================== 
+          Our Resume Section Start  
+    ========================================  -->
+    <section class="section-resume section " >
+      <div class="container grid grid-two-col">
+        <!-- resume left side  -->
+        <div class="resume-img">
+          <img src="images/lazy1.jpg" alt="my resume pic" 
+            data-src="images/biodata.jpg"
+            loading="lazy"
+            class="lazy-img"
+          />
+        </div>
+
+        <!-- resume right side  -->
+        <div class="resume-data">
+          <h2 class="common-heading">resume</h2>
+          <p class="resume-para">my work experience</p>
+
+          <div class="resume-data-subsection">
+            <div class="resume-data-left">
+              <h3>IFORTIS WORLDWIDE</h3>
+              <div class="grid grid-two-col">
+                <p>
+                  <ion-icon name="business-outline"></ion-icon> ifortis.inc
+                </p>
+                <p>
+                  <ion-icon name="location-outline"></ion-icon> Pune, India
+                </p>
+              </div>
+            </div>
+
+
+          </div>
+
+          <!-- 2nd work experience  -->
+          <div class="resume-data-subsection">
+            <div class="resume-data-left">
+              <h3> Front End Developer</h3>
+              <div class="grid grid-two-col">
+               
+                <p>
+                  <ion-icon name="location-outline"></ion-icon> Campus Level
+                </p>
+              </div>
+            </div>
+
+           
+          </div>
+
+          <!-- 3rd work experience  -->
+          
+
+          <!-- 4th work experience  -->
+          <div class="resume-data-subsection">
+            <div class="resume-data-left">
+              <h3>UI&UX Design</h3>
+              <div class="grid grid-two-col">
+               
+                <p>
+                  <ion-icon name="location-outline"></ion-icon> Pune
+                </p>
+              </div>
+            </div>
+
+            <div class="resume-data-right">
+              <p class="resume-data-button">Part-time</p>
+              <p>
+                <ion-icon name="calendar-outline"></ion-icon>On Campus -
+                Present
+              </p>
+            </div>
+          </div>
+       
+          <!-- Education section  -->
+          <div class="resume-data-bottom-subsection"> 
+            <p class="resume-para">Education</p> 
+         
+            <!-- 1st college  -->
+            <div class="resume-data-subsection margin-small">
+              <div class="resume-data-left">
+                <h3>Master in Computer Science</h3>
+                <div class="grid grid-two-col">
+                  <p>
+                    <ion-icon name="business-outline"></ion-icon> Wadia College, Inc.
+                  </p>
+                  <p>
+                    <ion-icon name="location-outline"></ion-icon> Pune, MH
+                  </p>
+                </div>
+              </div>
+
+              <div class="resume-data-right">
+                <p class="resume-data-button"> Masters</p>
+                <p>
+                  <ion-icon name="calendar-outline"></ion-icon>  <span>May 2016 - 2018 </span
+                  > 
+                </p>
+              </div>
+            </div>
+
+             <!-- 2nd college  -->
+            <div class="resume-data-subsection ">
+              <div class="resume-data-left">
+                <h3>Bachelor in Computer Science</h3>
+                <div class="grid grid-two-col">
+                  <p>
+                    <ion-icon name="business-outline"></ion-icon> Wadia College, Inc.
+                  </p>
+                  <p>
+                    <ion-icon name="location-outline"></ion-icon> Pune, MH
+                  </p>
+                </div>
+              </div>
+
+              <div class="resume-data-right">
+                <p class="resume-data-button"> Bachelor </p>
+                <p>
+                  <ion-icon name="calendar-outline"></ion-icon>  <span>May 2012 - 2015 </span
+                  > 
+                </p>
+              </div>
+            </div>
+            <!-- end  -->
+          </div>
+        </div>
+      </div>
+      
+    </section>
+
+
+    
+    <!-- ======================================== 
+          Our Testimonial Section Start  
+    ========================================  -->
+
+    <section class="section section-testimonial ">
+        <div class="container">
+          <h2 class="common-heading">Happy Client works</h2>
+        </div>
+          <!-- Slider main container -->
+          <!-- Swiper -->
+    <div class="swiper mySwiper container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+        
+          <div class="swiper-client-msg">
+            <p>Calvin: You know sometimes when I'm talking, my words can't keep up with my thoughts... I wonder why we think faster than we speak. Hobbes: Probably so we can think twice.</p>
+          </div>
+          <div class="swiper-client-data grid grid-two-col ">
+            <figure>
+            <img loading="lazy" src="https://1.bp.blogspot.com/-4QIBI-XmW4I/WdtCeBUDv1I/AAAAAAAAA3Y/sFI5RQUjNxQ5QD0XR1fwkpyq5BIPD6QZACLcBGAs/s1600/Free%2BLetter%2BC%2BLogo%2BDesign.png"alt="">
+            </figure>
+            <div class="client-data-details">
+              <p>Chinmai G</p>
+              <p>UI&UX Design</p>
+            </div>
+          </div>
+        </div>
+     
+        <!-- slide end  -->
+       
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+        </div>
+    </section>
+
+   <!-- ======================================== 
+         freelancing Section   
+    ========================================  -->
+
+    <section class="section section-freelancer ">
+      <div class="overlay"></div>
+      <div class="container">
+      <h2 >I am <span> available </span> for UI & UX</h2>
+    <!--  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum voluptates similique nulla vitae natus </p> -->
+      <a href="/contact.html" class="btn"> HIRE ME </a>
+      </div>
+    </section>
+
+       <!-- ======================================== 
+          Our  Cotnact Us Section   
+    ========================================  -->
+
+      <section class="section section-contact ">
+        <div class="container">
+          <h2 class="common-heading">contact us</h2>
+        </div>
+
+        <div class="section-contact-main contact-container">
+          <form action="https://formspree.io/f/xnqwzoro"
+  method="POST">
+            <div class=" grid grid-two-col">
+              <input type="text" name="username" id="" required placeholder="Name">
+              <input type="email" name="email" required placeholder="Email" autocomplete="false">
+            </div>
+            <div>
+              <input type="text" name="subject" placeholder="Subject">
+            </div>
+             <div>
+               <textarea name="message" id="" placeholder="Message"></textarea>
+             </div>
+
+             <div>
+               <input type="submit" value="send message" class="btn">
+             </div>
+          </form>
+        </div>
+      </section>
+
+   <!-- ======================================== 
+          Our footer Section   
+    ========================================  -->
+
+    <footer class="section section-footer " >
+      <div class="container grid grid-four-col">
+        <div class="f-about">
+          <h3>About</h3>
+          <p>We have tested a number of registry fix and clean utilities and present our top 3 list on our site for your convenience. Hope you like it.</p>
+        </div>
+
+        <div class="f-links">
+           <h3>Links</h3>
+          <ul>
+            <li><span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">home</a></li>
+             <li><span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">about</a></li>
+              <li><span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">services</a></li>
+               <li><span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">portfolio</a></li>
+              
+                 <li><span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">contact</a></li>
+          </ul>
+        </div>
+
+         <div class="f-services">
+            <h3>Services</h3>
+          <ul>
+            <li><span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">web design</a></li>
+             <li><span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">web development</a></li>
+              <li><span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">Mern Project</a></li>
+           
+                <li><span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">Online Classes</a></li>
+                 <li><span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">Youtube Course</a></li>
+          </ul>
+        </div>
+
+        <div class="f-address"> 
+          <h3>Have a Questions?</h3>
+          <address>
+            <div>
+              <p>  <span><ion-icon name="location-outline"></ion-icon></span> Pune, India </p>
+            </div>
+
+            <div>
+              <p>  <span><ion-icon name="call-outline"></ion-icon></span> <a href="tel:+91123456789"> +91 9527375789 </a></p>
+            </div>
+
+            <div>
+              <p>  <span><ion-icon name="mail-outline"></ion-icon></span> <a href="mailto:test@thapa.com"> chinmaigaikar@gmail.com </a> </p>
+            </div>
+          </address>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="f-social-icons">
+          <a href="https://www.instagram.com/thapatechnical/" target="_blank">
+            <ion-icon class="icons" name="logo-instagram"></ion-icon>
+          </a>
+
+            <a href="https://discord.gg/MdScmCsua6" target="_blank">
+           <ion-icon class="icons" name="logo-discord"></ion-icon>
+          </a>
+
+            <a href="https://www.youtube.com/thapatechnical" target="_blank">
+           <ion-icon class="icons" name="logo-youtube"></ion-icon>
+          </a>
+        </div>
+
+        <div class="f-credits">
+          <p>Copyright ©2022 All rights reserved | This template is made with ❤ by Chinmai G</p>
+        </div>
+      </div>
+
+    </footer>
+
+
+
+    <!-- ======================================== 
+          Our JavaScript Section   
+    ========================================  -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
